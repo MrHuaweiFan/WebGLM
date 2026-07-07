@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Fade-out animation for the loading overlay.
+  Smoothly reduces alpha from 1.0 to 0.0 over 400ms, then the overlay
+  is set to GONE in code. Uses accelerate interpolator so the fade
+  starts slow and speeds up slightly, feeling natural.
+-->
+<alpha xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fromAlpha="1.0"
+    android:toAlpha="0.0"
+    android:duration="400"
+    android:interpolator="@android:interpolator/accelerate_quad" />

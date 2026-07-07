@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WebGLM</string>
+    <string name="settings_title">WebGLM Settings</string>
+
+    <!-- WebView Manager -->
+    <string name="webview_manager">WebView Manager</string>
+    <string name="webview_manager_summary">Pick which WebView implementation this app uses</string>
+    <string name="webview_empty">No supported WebView implementations found. Please install one in the Downloader tab.</string>
+    <string name="unsupported_message">The current WebView implementation is not supported. Please select or install another one.</string>
+    <string name="learn_more">Learn more</string>
+    <string name="refresh">Refresh</string>
+    <string name="download">Download</string>
+    <string name="unsupported">Unsupported</string>
+    <string name="webview_optimize_title">Optimize WebView performance</string>
+    <string name="webview_optimize_summary">Force-enable ignore-gpu-blocklist and WebViewSurfaceControl on the chosen WebView</string>
+    <string name="webview_restart_required">Restart required to apply the new WebView</string>
+    <string name="webview_pick_another">Select another WebView implementation to stop the crashes</string>
+
+    <!-- WebView info dialog -->
+    <string name="webview_info_title">Why change the WebView?</string>
+    <string name="webview_info_body">Changing the WebView implementation can fix features that don\'t work properly in WebGLM — such as the copy button — and can drastically improve the app\'s overall performance.\n\nThorium WebView is strongly recommended, especially on Huawei devices.</string>
+    <string name="understood">Understood</string>
+
+    <!-- First-launch welcome dialog -->
+    <string name="welcome_title">Welcome to WebGLM</string>
+    <string name="welcome_body">This app has a hidden Settings menu where you can switch to a faster WebView (Thorium is recommended), enable desktop mode, optimize performance and more.\n\nOpen it any time from the floating button at the top-right of the main screen, or from Android\'s App info → gear icon.</string>
+
+    <!-- Update checker -->
+    <string name="check_for_updates">Check for updates</string>
+    <string name="check_for_updates_summary">Check GitHub for a newer version of the app</string>
+    <string name="update_checking">Checking for updates…</string>
+    <string name="update_up_to_date">You\'re on the latest version</string>
+    <string name="update_available">Update available: v%1$s</string>
+    <string name="update_downloading">Downloading update…</string>
+    <string name="update_download_failed">Download failed: %1$s</string>
+    <string name="update_install">Install</string>
+    <string name="update_install_request_permission">Allow installs from this app to continue</string>
+
+    <!-- ─── In-app downloads (tmpfiles.org) ─────────────────────────── -->
+    <string name="downloads_section">Downloads</string>
+    <string name="tmpfiles_in_app_title">Open tmpfiles.org links in-app</string>
+    <string name="tmpfiles_in_app_summary">Intercept tmpfiles.org/dl/ links and download directly — no browser needed</string>
+    <string name="default_apps_title">Default apps for file types</string>
+    <string name="default_apps_summary">Choose which app opens each file type after download</string>
+
+    <!-- Tmpfiles download dialog -->
+    <string name="tmpfiles_dialog_title">Download file</string>
+    <string name="tmpfiles_loading_info">Loading file info…</string>
+    <string name="tmpfiles_size_label">Size: %1$s</string>
+    <string name="tmpfiles_type_label">Type: %1$s</string>
+    <string name="tmpfiles_size_unknown">Unknown</string>
+    <string name="tmpfiles_open_after">Open file after download</string>
+    <string name="tmpfiles_btn_download">Download</string>
+    <string name="tmpfiles_btn_download_anyway">Download anyway</string>
+    <string name="tmpfiles_btn_cancel">Cancel</string>
+    <string name="tmpfiles_btn_open">Open</string>
+    <string name="tmpfiles_downloading">Downloading…</string>
+    <string name="tmpfiles_download_success">Saved to Download/%1$s</string>
+    <string name="tmpfiles_download_failed">Download failed: %1$s</string>
+    <string name="tmpfiles_no_open_apps">No apps can open this file type</string>
+    <string name="tmpfiles_already_downloaded">Already downloaded</string>
+
+    <!-- File chooser dialog -->
+    <string name="chooser_title">Open with</string>
+    <string name="chooser_just_once">Just once</string>
+    <string name="chooser_always">Always</string>
+
+    <!-- App manager -->
+    <string name="app_manager_title">Default apps for file types</string>
+    <string name="app_manager_empty">No default apps set. Download a file and choose \"Always\" to set one.</string>
+    <string name="app_manager_clear">Clear</string>
+    <string name="app_manager_clear_all">Clear all</string>
+    <string name="app_manager_not_set">Not set</string>
+</resources>

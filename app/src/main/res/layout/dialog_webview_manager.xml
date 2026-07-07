@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:paddingTop="8dp"
+    android:paddingStart="8dp"
+    android:paddingEnd="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- "Not supported" banner — shown only when the current WebView lacks
+         DOCUMENT_START_SCRIPT (i.e. is too old). The user is expected to
+         pick or install a newer one. -->
+    <TextView
+        android:id="@+id/txt_unsupported"
+        android:textSize="11sp"
+        android:padding="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone"
+        android:text="@string/unsupported_message" />
+
+    <!-- Tab toggle: Installed vs Downloader -->
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/tgl_tab"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        app:checkedButton="@+id/btn_installed"
+        app:selectionRequired="true"
+        app:singleSelection="true">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_installed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="32dp"
+            android:text="Installed"
+            android:layout_weight="1"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            style="?attr/materialButtonOutlinedStyle" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_downloader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="32dp"
+            android:text="Downloader"
+            android:layout_weight="1"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            style="?attr/materialButtonOutlinedStyle" />
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+    <!-- ───────── Installed tab ───────── -->
+    <LinearLayout
+        android:id="@+id/lay_installed"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txt_empty"
+            android:gravity="center"
+            android:padding="16dp"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/webview_empty" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/lst_installed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/refresh"
+            style="@style/Widget.Material3.Button.TextButton" />
+    </LinearLayout>
+
+    <!-- ───────── Downloader tab ───────── -->
+    <LinearLayout
+        android:id="@+id/lay_downloader"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/lst_downloader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>

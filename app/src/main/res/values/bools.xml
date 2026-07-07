@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- In light mode, status-bar icons are dark-on-light. -->
+    <bool name="window_light_status_bar">true</bool>
+</resources>

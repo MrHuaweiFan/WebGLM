@@ -1,0 +1,56 @@
+apply plugin: 'com.android.application'
+
+android {
+    namespace 'com.webglm.app'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.webglm.app"
+        minSdk 21
+        targetSdk 34
+        versionCode 2
+        versionName "1.1"
+        // AGP 8+ disables BuildConfig generation by default. We need it for
+        // BuildConfig.APPLICATION_ID in Hooker.java.
+        buildConfigField "boolean", "ENABLE_WEBVIEW_SWITCHER", "true"
+    }
+
+    buildFeatures {
+        buildConfig true
+    }
+
+    signingConfigs {
+        release {
+            storeFile file('test.keystore')
+            storePassword 'test123'
+            keyAlias 'test'
+            keyPassword 'test123'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            signingConfig signingConfigs.debug
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    // Material Components for Android — gives us MaterialCardView, MaterialSwitch,
+    // MaterialButton, and the Material3 theme.
+    implementation 'com.google.android.material:material:1.11.0'
+
+    // ─── WebView switcher dependencies ────────────────────────────────────
+    // RecyclerView: lists in the WebView Manager picker dialog.
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+    // androidx.webkit: gives us WebViewFeature.isFeatureSupported() which we
+    // use to detect whether the current WebView is new enough.
+    implementation 'androidx.webkit:webkit:1.10.0'
+}

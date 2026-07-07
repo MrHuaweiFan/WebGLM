@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  File chooser dialog layout. A scrollable container that gets populated
+  with item_chooser_app rows by FileOpenHelper.showChooser().
+-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:maxHeight="400dp">
+
+    <LinearLayout
+        android:id="@+id/chooser_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp" />
+
+</ScrollView>

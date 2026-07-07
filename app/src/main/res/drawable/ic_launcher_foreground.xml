@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  WebGLM launcher icon foreground: a stylized "Z" shape (two interlocking
+  Z polygons) in white #FFFFFF, centered in the 108x108dp adaptive-icon
+  canvas. Sourced from logo_recreation.svg (viewBox 0 0 1254 1254); the
+  path is scaled by 0.051675 and translated by (21.6000, 21.6000)
+  so the Z occupies ~40% of the canvas (spans roughly 32..76), centered at (54, 54).
+
+  The Z shape is the WebGLM knockoff mark. Background
+  (ic_launcher_background.xml) is #2D2D2D dark.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <group
+        android:scaleX="0.051675"
+        android:scaleY="0.051675"
+        android:translateX="21.6000"
+        android:translateY="21.6000">
+
+        <path
+            android:fillColor="#FFFFFF"
+            android:fillType="nonZero"
+            android:pathData="M323.1,279.1 L276.6,344.1 L856.8,344.1 L484.7,864.9 L894.7,864.9 L941.2,799.9 L611.0,799.9 L983.1,279.1 Z M359.3,389.1 L312.8,454.1 L643.0,454.1 L270.9,974.9 L930.9,974.9 L977.4,909.9 L397.2,909.9 L769.3,389.1 Z" />
+    </group>
+</vector>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+
+    <!--
+      Package-visibility declarations required for the in-app WebView switcher.
+      On Android 11+ (API 30+) apps cannot see other installed packages unless
+      they are listed here. Without these entries, PackageManager.getPackageInfo
+      would throw NameNotFoundException for every WebView package except the
+      system default, and the picker would show only one row.
+    -->
+    <queries>
+        <package android:name="com.google.android.webview"/>
+        <package android:name="com.google.android.webview.beta"/>
+        <package android:name="com.google.android.webview.dev"/>
+        <package android:name="com.google.android.webview.canary"/>
+        <package android:name="com.android.webview"/>
+        <package android:name="com.android.chrome"/>
+        <package android:name="com.chrome.beta"/>
+        <package android:name="com.chrome.dev"/>
+        <package android:name="com.chrome.canary"/>
+        <package android:name="com.amazon.webview.chromium"/>
+        <package android:name="com.huawei.webview"/>
+        <package android:name="us.spotco.mulch_wv"/>
+        <package android:name="com.thorium.webview"/>
+
+        <!-- Allow querying apps that can handle ACTION_VIEW for any MIME type,
+             so the file-open chooser can discover them on Android 11+. -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:mimeType="*/*" />
+        </intent>
+    </queries>
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:fullBackupContent="true"
+        android:usesCleartextTraffic="true"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+
+        <!--
+          Synthetic developer-mode content provider. The authority uses the
+          chosen WebView package's name as a prefix (e.g.
+          "com.thorium.webview.DeveloperModeContentProvider"). Chromium WebView
+          queries this authority to read developer-mode flag overrides.
+
+          This declaration in the manifest is only a fallback — at runtime
+          Hooker.hookInstallContentProviders() reflectively installs the
+          provider via ActivityThread.installContentProviders() with whatever
+          authority matches the currently selected WebView. The manifest entry
+          ensures the provider class is registered even if the runtime hook
+          fails (e.g. on a future Android version that hides
+          ActivityThread.installContentProviders).
+        -->
+        <provider
+            android:name="com.webglm.app.webview.DeveloperModeContentProvider"
+            android:authorities="${applicationId}.DeveloperModeContentProvider"
+            android:exported="false"
+            android:enabled="true" />
+
+        <!-- FileProvider so we can share downloaded images via ACTION_SEND -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation|screenSize"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <!-- ============ SHARE TEXT / FILES INTO WEBGLM ============ -->
+
+            <!-- Receive text shares ("Ask WebGLM" appears in the share menu
+                 when sharing text from other apps) -->
+            <intent-filter android:label="Ask WebGLM">
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/*" />
+            </intent-filter>
+
+            <!-- Receive file shares (any file type — image, document, code, etc.) -->
+            <intent-filter android:label="Send to WebGLM">
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="*/*" />
+            </intent-filter>
+
+            <!-- "Ask WebGLM" in text selection menu (long-press text in any app) -->
+            <intent-filter android:label="Ask WebGLM">
+                <action android:name="android.intent.action.PROCESS_TEXT" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="true"
+            android:label="@string/settings_title"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.APPLICATION_PREFERENCES" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".AppManagerActivity"
+            android:exported="false"
+            android:label="@string/app_manager_title"
+            android:theme="@style/AppTheme" />
+    </application>
+</manifest>

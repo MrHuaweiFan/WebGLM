@@ -1,0 +1,36 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <WebView
+        android:id="@+id/activity_main_webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Loading overlay — Z.ai logo with fade in/out (no spin).
+         Background matches device theme (black in dark mode, white in light mode).
+         Stays visible until the page has fully loaded its theme to avoid white flash. -->
+    <FrameLayout
+        android:id="@+id/loading_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?android:attr/colorBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/loading_logo"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_zai_logo"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:contentDescription="loading" />
+
+    </FrameLayout>
+
+</FrameLayout>

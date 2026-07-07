@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Material Theme Builder palette — dark scheme -->
+    <color name="md_primary">#9BCBFB</color>
+    <color name="md_onPrimary">#003353</color>
+    <color name="md_primaryContainer">#0E4A73</color>
+    <color name="md_onPrimaryContainer">#CEE5FF</color>
+
+    <color name="md_secondary">#9BCBFB</color>
+    <color name="md_onSecondary">#003353</color>
+    <color name="md_secondaryContainer">#0D4A73</color>
+    <color name="md_onSecondaryContainer">#CEE5FF</color>
+
+    <color name="md_tertiary">#A0CAFD</color>
+    <color name="md_onTertiary">#003258</color>
+    <color name="md_tertiaryContainer">#184975</color>
+    <color name="md_onTertiaryContainer">#D1E4FF</color>
+
+    <color name="md_error">#FFB4AB</color>
+    <color name="md_onError">#690005</color>
+    <color name="md_errorContainer">#93000A</color>
+    <color name="md_onErrorContainer">#FFDAD6</color>
+
+    <color name="md_background">#161616</color>
+    <color name="md_onBackground">#E0E2E8</color>
+
+    <color name="md_surface">#161616</color>
+    <color name="md_onSurface">#DEE3E5</color>
+    <color name="md_surfaceVariant">#3F484A</color>
+    <color name="md_onSurfaceVariant">#BFC8CA</color>
+    <color name="md_surfaceContainerLowest">#090F10</color>
+    <color name="md_surfaceContainerLow">#171D1E</color>
+    <color name="md_surfaceContainer">#1B2122</color>
+    <color name="md_surfaceContainerHigh">#252B2C</color>
+    <color name="md_surfaceContainerHighest">#303637</color>
+
+    <color name="md_outline">#899294</color>
+    <color name="md_outlineVariant">#3F484A</color>
+
+    <color name="md_inverseSurface">#DEE3E5</color>
+    <color name="md_inverseOnSurface">#2B3133</color>
+    <color name="md_inversePrimary">#2F628C</color>
+
+    <!-- Warning (for unstable notice) -->
+    <color name="warning_container">#FF3F3416</color>
+    <color name="warning_on_container">#FFF5DFC6</color>
+    <color name="warning_outline">#FF89723F</color>
+
+    <!-- Status / navigation bar: matches the loading screen background. -->
+    <color name="status_bar_bg">#161616</color>
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  WebGLM loading-screen logo: just the Z shape (no background), tintable
+  at runtime via ImageViewCompat.setImageTintList(). The MainActivity
+  applies dark #2D2D2D in light mode and white #FFFFFF in dark mode.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="240dp"
+    android:height="240dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <group
+        android:scaleX="0.086124"
+        android:scaleY="0.086124"
+        android:translateX="0"
+        android:translateY="0">
+
+        <path
+            android:fillColor="#000000"
+            android:fillType="nonZero"
+            android:pathData="M323.1,279.1 L276.6,344.1 L856.8,344.1 L484.7,864.9 L894.7,864.9 L941.2,799.9 L611.0,799.9 L983.1,279.1 Z M359.3,389.1 L312.8,454.1 L643.0,454.1 L270.9,974.9 L930.9,974.9 L977.4,909.9 L397.2,909.9 L769.3,389.1 Z" />
+    </group>
+</vector>

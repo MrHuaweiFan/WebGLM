@@ -1,0 +1,18 @@
+# Normalize line endings on checkout; let git keep gradlew executable bit
+* text=auto eol=lf
+
+# Shell scripts must always use LF
+*.sh         text eol=lf
+gradlew      text eol=lf
+*.bat        text eol=crlf
+
+# Binary files — never touch
+*.png        binary
+*.jpg        binary
+*.jpeg       binary
+*.gif        binary
+*.webp       binary
+*.ico        binary
+*.keystore   binary
+*.jks        binary
+*.jar        binary

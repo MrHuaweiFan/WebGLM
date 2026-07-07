@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--
+      Material 3 theme using the color palette from the Material Theme Builder
+      export the user provided (blue palette, seed #4189C3).
+
+      Inherits from Theme.Material3.DayNight.NoActionBar so we get the full M3
+      component styles (TopAppBar, MaterialCardView, MaterialButton, etc.).
+      We override only the color tokens.
+    -->
+    <style name="AppTheme" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/md_primary</item>
+        <item name="colorOnPrimary">@color/md_onPrimary</item>
+        <item name="colorPrimaryContainer">@color/md_primaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/md_onPrimaryContainer</item>
+
+        <item name="colorSecondary">@color/md_secondary</item>
+        <item name="colorOnSecondary">@color/md_onSecondary</item>
+        <item name="colorSecondaryContainer">@color/md_secondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/md_onSecondaryContainer</item>
+
+        <item name="colorTertiary">@color/md_tertiary</item>
+        <item name="colorOnTertiary">@color/md_onTertiary</item>
+        <item name="colorTertiaryContainer">@color/md_tertiaryContainer</item>
+        <item name="colorOnTertiaryContainer">@color/md_onTertiaryContainer</item>
+
+        <item name="colorError">@color/md_error</item>
+        <item name="colorOnError">@color/md_onError</item>
+        <item name="colorErrorContainer">@color/md_errorContainer</item>
+        <item name="colorOnErrorContainer">@color/md_onErrorContainer</item>
+
+        <item name="android:colorBackground">@color/md_background</item>
+        <item name="colorOnBackground">@color/md_onBackground</item>
+
+        <item name="colorSurface">@color/md_surface</item>
+        <item name="colorOnSurface">@color/md_onSurface</item>
+        <item name="colorSurfaceVariant">@color/md_surfaceVariant</item>
+        <item name="colorOnSurfaceVariant">@color/md_onSurfaceVariant</item>
+
+        <item name="colorOutline">@color/md_outline</item>
+        <item name="colorOutlineVariant">@color/md_outlineVariant</item>
+
+        <!-- Status bar: explicit light/dark surface + matching icon tint.
+             Material3 DayNight sets a slightly-off translucent color by
+             default (e.g. #101418 in dark, #F7F9FF in light) which clashes
+             with the actual app surface. Pin to pure #000000/#fcfcfc. -->
+        <item name="android:statusBarColor">@color/status_bar_bg</item>
+        <item name="android:navigationBarColor">@color/status_bar_bg</item>
+        <item name="android:windowLightStatusBar">@bool/window_light_status_bar</item>
+        <item name="android:windowLightNavigationBar">@bool/window_light_status_bar</item>
+    </style>
+
+</resources>
